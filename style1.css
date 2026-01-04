@@ -21,6 +21,11 @@
     src:url(Fonts/GraphikBlack.otf)
 }
 
+:root{
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --fade-distance: 24px;
+}
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -32,6 +37,12 @@
 img{
   max-width: 100%;
   height: auto;
+}
+h1, h3{
+    cursor: default;
+}
+a{
+    cursor: pointer;
 }
 body{
     overflow-x: hidden;
@@ -51,7 +62,9 @@ html{
     padding: 8px 16px;
     height: auto;
     text-align: center;
-    /* box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8); */
+    opacity: 0;
+    transform: translateY(-16px);
+    animation: promoReveal 0.8s var(--ease-out) forwards;
 }
 #promotion h4{
     font-size: 16px;
@@ -64,6 +77,7 @@ html{
     font-family: graphikBold;
     word-spacing: 0;
     border-bottom: 1px solid hsl(0, 0%, 45%);
+    cursor: pointer;
 }
 #promotion p{
     font-size: 10px;
@@ -88,6 +102,10 @@ html{
     align-items: center;
     height: 85px;
     padding-inline: 1.2rem;
+    opacity: 0;
+    transform: translateY(-12px);
+    animation: headerReveal 0.9s var(--ease-out) forwards;
+    animation-delay: 0.2s;
 }
 #header>div{
     width:60px;
@@ -106,6 +124,7 @@ html{
     font-family: graphikSemi;
     font-size: 13px;
     letter-spacing: 0.6px;
+    cursor: pointer;
 }
 
 /* .hulu-style{
@@ -125,6 +144,10 @@ html{
     position: static;
     top: 60vh;
     left: 50%;
+    opacity: 0;
+    transform: translateY(var(--fade-distance));
+    animation: sectionReveal 1s var(--ease-out) forwards;
+    animation-delay: 0.35s;
 }
 #cta-options .cta-bundle{
     display:flex;
@@ -138,6 +161,8 @@ html{
     gap: 29.8px;
     width: 100%;
     max-width: 340px;
+    opacity: 0;
+    transform: translateY(28px);
 }
 .cta-bundle> div h5{
     font-family: graphikSemi;
@@ -162,6 +187,12 @@ html{
     background-color: hsl(150, 81%, 51%);
     border-radius: 7px;
     color: black;
+    cursor: pointer;
+    transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), background-color 0.25s;
+}
+.cta-bundle>div a:hover{
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(28, 231, 131, 0.35);
 }
 .cta-bundle .img-wrapper{
     width: 100%;
@@ -171,6 +202,10 @@ html{
     width: 50%;
     height: auto;
     text-align: center;
+    transition: transform 0.6s var(--ease-out);
+}
+.cta-bundle > div:hover .img-wrapper img{
+    transform: translateY(-6px);
 }
 .cta-bundle>div:last-child p{
     font-family: graphikReg;
@@ -178,21 +213,67 @@ html{
     margin-top: -23px;
     text-align: center;
 }
+.cta-bundle>div.reveal{
+  animation: cardReveal 0.9s var(--ease-out) forwards;
+}
 #cta-options .terms{
+    position: relative;
     font-family: graphikReg;
     font-size: 14px;
     text-align: center;
     margin-top: 20.4px;
-    text-decoration: 1px underline #fff;
+    text-decoration: none;
     cursor: pointer;
 }
 #cta-options .sign-up{
+    position: relative;
     font-family: graphikReg;
     font-size: 16px;
     text-align: center;
     margin-top: 23.4px;
+    text-decoration: none;
     cursor: pointer;
-    border-bottom: 1px solid #fff;
+}
+#cta-options .terms::after,
+#cta-options .sign-up::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transition: width 0.25s ease;
+}
+
+#cta-options .terms:hover::after,
+#cta-options .sign-up:hover::after{
+    width: 100%;
+}
+
+@keyframes promoReveal{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes headerReveal{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes sectionReveal{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes cardReveal{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 600px){
@@ -272,12 +353,20 @@ html{
     background-color: 	hsl(225, 15%, 5%);
     color:#fff;
     padding-bottom: 4.5rem;
+    overflow: hidden;
 }
 #cards-wrapper> div:first-child{
     text-align:center;
     padding-inline: 1.5rem;
     padding-top: 5.5rem;
     padding-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+#cards-wrapper.reveal> div:first-child{
+    opacity: 1;
+    transform: translateY(0);
 }
 #cards-wrapper> div:first-child h4{
     color: hsl(150, 81%, 51%);
@@ -313,9 +402,19 @@ html{
     border-radius: 9px;
     position: relative;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.cards .individual-card.reveal{
+    animation: cardFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 .cards .individual-card:hover{
-  transform: scale(1.03);
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+.cards .individual-card:hover img{
+    transform: scale(1.08);
 }
 .cards .individual-card::before{
     content: '';
@@ -325,6 +424,10 @@ html{
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
     height: 100%;
     width: 100%;
+    transition: background-image 0.4s ease;
+}
+.cards .individual-card:hover::before{
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35));
 }
 .cards-img-wrapper{
     width: 100%;
@@ -337,6 +440,7 @@ html{
     width: 100%;
     border-radius: 9px;
     height: 100%;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .cards .cards-header{
     position: absolute;
@@ -352,6 +456,13 @@ html{
     font-family: graphikSemi;
     font-size: 24px;
     margin-top:0.5rem;
+}
+
+@keyframes cardFadeUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 600px){
@@ -430,8 +541,17 @@ html{
     color: #fff;
     overflow-x: hidden;
 }
+#about h3,
+#about h1,
+#about .liveTV-description,
+#about .limited-time,
+#about a,
+#about .terms{
+    opacity: 0;
+    transform: translateY(28px);
+}
 #about>div:first-child{
-    padding-block: 24rem;
+    padding-block: 5rem;
     padding-inline: 2rem;
     max-width: 1200px;
     margin-inline: auto;
@@ -440,7 +560,6 @@ html{
     color: hsl(150, 81%, 51%);
     font-family: graphikMed;
     font-size: 14px;
-    font-weight: lighter;
     letter-spacing: 0.6px;
 }
 #about>div:first-child h1{
@@ -449,13 +568,11 @@ html{
     margin-top: 20px;
 }
 #about>div:first-child .liveTV-description{
+    max-width: 900px;
+    margin: 23.8px auto;
     font-family: graphikReg;
     font-size: 18px;
-    margin-block: 23.8px;
-    line-height: 1.5rem;
-}
-#about>div:first-child .liveTV-description span{
-    margin-inline:auto;
+    line-height: 1.6;
 }
 #about>div:first-child .limited-time{
     font-family: graphikSemi;
@@ -465,19 +582,19 @@ html{
 }
 #about>div:first-child a{
     display: inline-block;
-    font-family: graphikSemi;
-    font-size: 14px;
     margin-top: 14px;
     padding: 1rem 1.4rem;
     border-radius: 6px;
     background-color: hsl(150, 81%, 51%);
     color: #000;
-    letter-spacing: 0.6px;
+    font-family: graphikSemi;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-#about>div:first-child .liveTV-description{
-  max-width: 900px;
-  margin-inline: auto;
-  line-height: 1.6;
+#about>div:first-child a:hover{
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(28, 231, 131, 0.35);
 }
 #about .terms{
     max-width: 1200px;
@@ -485,107 +602,139 @@ html{
     font-size: 10px;
     color: hsl(0, 0%, 60%);
     padding-inline: 2rem;
-    margin-bottom: 1.4rem;
-    margin-inline: auto;
+    margin: 0 auto 1.4rem;
 }
-#about>div:nth-child(2){ 
-    padding-bottom:5rem;
+#about>div:nth-child(2){
+    padding-bottom: 5rem;
 }
-#about .terms+a{
-    text-transform:uppercase;
+#about .terms + a{
+    position: relative;
+    text-transform: uppercase;
     font-family: graphikSemi;
     font-size: 16px;
     letter-spacing: 0.6px;
-    text-decoration: 1px underline;
-    color: hsl(0, 0%, 85%);
-    margin-top:16px;
+    cursor: pointer;
 }
+#about .terms + a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transition: width 0.25s ease;
+}
+#about .terms + a:hover::after{
+    width: 100%;
+}
+#about.in-view h3,
+#about.in-view h1,
+#about.in-view .liveTV-description,
+#about.in-view .limited-time,
+#about.in-view a,
+#about.in-view .terms{
+    animation: huluFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+#about.in-view h3{ animation-delay: 0.15s; }
+#about.in-view h1{ animation-delay: 0.25s; }
+#about.in-view .liveTV-description{ animation-delay: 0.4s; }
+#about.in-view .limited-time{ animation-delay: 0.55s; }
+#about.in-view a{ animation-delay: 0.7s; }
+#about.in-view .terms{ animation-delay: 0.85s; }
+
 #live-sports-container{
-    position:relative;
-    height:auto;
+    position: relative;
     min-height: 100vh;
-    width:100%;
-    background-image:url('Images/hulu_sports.jfif');
+    width: 100%;
+    background-image: url('Images/hulu_sports.jfif');
     background-size: cover;
-    display:flex;
+    display: flex;
     align-items: center;
     padding: 6rem 2rem;
+    overflow: hidden;
+}
+#live-sports-container .live-sports-menu,
+#live-sports-container h1,
+#live-sports-container p,
+#live-sports-container .brands,
+#live-sports-container .sports-terms{
+    text-align: left;
+    opacity: 0;
+    transform: translateY(26px);
 }
 #live-sports-container::before{
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
-    height: 100%;
-    width: 100%;
+    inset: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
 }
 #live-sports-container .live-sports{
-    width:100%;
     max-width: 520px;
-    text-align: start;
     z-index: 2;
 }
 #live-sports-container .live-sports-menu{
-    display:flex;
-    gap:20px;
+    display: flex;
+    gap: 20px;
     font-family: graphikSemi;
     font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 0.3px;
     color: #C8C8C8;
 }
-#live-sports-container .live-sports-menu>span:first-child{
+#live-sports-container .live-sports-menu span:first-child{
     color: #fff;
     border-bottom: 4.5px solid #fff;
     padding-bottom: 12px;
 }
 #live-sports-container .live-sports-content{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-top:45px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 #live-sports-container .brands{
-    display:flex;
-    gap:2rem;
+    display: flex;
+    gap: 2rem;
 }
-#live-sports-container .live-sports-content h1{
-    font-family: graphikSemi;
-    font-size: 48px;
-}
-#live-sports-container .live-sports-content p{
-    font-family: graphikReg;
-    font-size: 18px;
-    letter-spacing: 0.2px;
-    word-spacing: 0.2px;
-    line-height: 23px;
-}
-#live-sports-container .live-sports-content .brands>div{
+#live-sports-container .brands > div{
     width: 50px;
     height: 50px;
-    border-radius: 45px;
-    background-color: white;
+    border-radius: 50%;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-#live-sports-container .live-sports-content .brands>div img{
-    width:90%;
-    height:auto;
+#live-sports-container .brands > div:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
-#live-sports-container .live-sports-content .brands>div:nth-child(3) img{
-    width:60%;
+#live-sports-container.in-view .live-sports-menu,
+#live-sports-container.in-view h1,
+#live-sports-container.in-view p,
+#live-sports-container.in-view .brands,
+#live-sports-container.in-view .sports-terms{
+    animation: huluFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-#live-sports-container .live-sports-content .sports-terms{
-    font-family: graphikReg;
-    font-size:10px;
-    color: #C8C8C8;
+#live-sports-container.in-view .live-sports-menu{ animation-delay: 0.25s; }
+#live-sports-container.in-view h1{ animation-delay: 0.4s; }
+#live-sports-container.in-view p{ animation-delay: 0.55s; }
+#live-sports-container.in-view .brands{ animation-delay: 0.7s; }
+#live-sports-container.in-view .sports-terms{ animation-delay: 0.85s; }
+
+@keyframes huluFadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-#live-sports-container .live-sports-content .sports-terms>a{
-    cursor:pointer;
-    text-decoration:1px solid underline;
-    padding-left:3px;
+@keyframes bgSlowZoom{
+    from{ transform: scale(1); }
+    to{ transform: scale(1.06); }
 }
 
 @media (max-width: 600px){
@@ -771,6 +920,7 @@ html{
 .plan-switch .plan-switch-img-wrapper2{
     width:40px;
     height:auto;
+    cursor: pointer;
 }
 .plan-switch .plan-switch-img-wrapper2>img{
     width:100%;
@@ -810,6 +960,7 @@ html{
     padding: 0.9rem 2.5rem;
     white-space: nowrap;
     border-radius: 7px;
+    cursor: pointer;
 }
 .hulu-cta-buttons .cta-bundle1>a:first-child{
     font-family: graphikMed;
@@ -884,6 +1035,7 @@ html{
 }
 #plan-container .show-add-ons .down-arrow-wrapper{
     width:75px;
+    cursor: pointer;
 }
 #plan-container .show-add-ons .down-arrow-wrapper>img{
     width:38%;
@@ -1007,6 +1159,7 @@ footer .menu-single-column h4{
     letter-spacing: 0.4px;
     font-size: 12px;
     font-weight: 400;
+    cursor: default;
 }
 footer .menu-single-column h4.invisible{
     visibility: hidden;
@@ -1017,6 +1170,7 @@ footer .menu-single-column h6{
     color: hsl(221, 14%, 55%);
     font-weight: lighter;
     white-space: nowrap;
+    cursor: pointer;
 }
 footer .footer-line{
     height: 1px;
@@ -1031,6 +1185,9 @@ footer .footer-line{
     font-size: 22px;
     color: hsl(221, 14%, 43%);
 }
+.social-media i{
+    cursor: pointer;
+}
 footer .copyright{
     display: flex;
     flex-wrap: wrap;
@@ -1039,6 +1196,9 @@ footer .copyright{
     font-family: graphikReg;
     font-size: 12px;
     color: hsl(221, 14%, 57%);
+}
+footer .copyright span{
+    cursor: pointer;
 }
 footer .copyright .about-ads-wrapper{
     display: flex;
