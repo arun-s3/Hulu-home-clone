@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: graphikReg;
+    src: url(../Fonts/GraphikRegular.otf)
+}
+
+@font-face {
+    font-family: graphikMed;
+    src: url(../Fonts/GraphikMedium.otf)
+}
+
+@font-face {
+    font-family: graphikBold;
+    src: url(../Fonts/GraphikBold.otf);
+}
+
+@font-face {
+    font-family: graphikSemi;
+    src: url(../Fonts/GraphikSemibold.otf)
+}
+
+@font-face {
+    font-family: graphikSuper;
+    src: url(../Fonts/GraphikBlack.otf)
+}
+
+:root {
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --fade-distance: 24px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family:'space grotesk', sans-serif; */
+    /* font-family: 'graphik-arts', sans-serif; */
+    font-family: graphikReg;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h3 {
+    cursor: default;
+}
+
+a {
+    cursor: pointer;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}

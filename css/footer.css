@@ -1,0 +1,135 @@
+footer {
+    width: 100%;
+    background-color: hsl(216, 12%, 92%);
+    padding-bottom: 1.5rem;
+}
+
+footer .menu-items,
+.social-media,
+footer .copyright {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+footer .menu-items {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    gap: 3rem;
+    padding-top: 5rem;
+}
+
+footer .menu-single-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+footer .menu-single-column h4 {
+    font-family: graphikMed;
+    color: #272C34;
+    letter-spacing: 0.4px;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: default;
+}
+
+footer .menu-single-column h4.invisible {
+    visibility: hidden;
+}
+
+footer .menu-single-column h6 {
+    font-family: graphikReg;
+    font-size: 14px;
+    color: hsl(221, 14%, 55%);
+    font-weight: lighter;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+footer .footer-line {
+    height: 1px;
+    background-color: hsl(221, 14%, 55%);
+    margin: 4rem auto 0;
+    max-width: 1200px;
+}
+
+.social-media {
+    display: flex;
+    gap: 1.7rem;
+    padding-block: 3rem;
+    font-size: 22px;
+    color: hsl(221, 14%, 43%);
+}
+
+.social-media i {
+    cursor: pointer;
+}
+
+footer .copyright {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+    align-items: center;
+    font-family: graphikReg;
+    font-size: 12px;
+    color: hsl(221, 14%, 57%);
+}
+
+footer .copyright span {
+    cursor: pointer;
+}
+
+footer .copyright .about-ads-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+}
+
+footer .copyright .about-ads-wrapper img {
+    width: 18px;
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    footer .disney h6 {
+        white-space: wrap;
+    }
+}
+
+@media (max-width: 900px) {
+    footer .menu-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer .menu-single-column h6 {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 600px) {
+    footer .menu-items {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 3rem;
+    }
+
+    footer .menu-single-column h4.invisible {
+        display: none;
+    }
+
+    .social-media {
+        padding-block: 2rem;
+    }
+
+    footer .copyright {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    footer .copyright>span,
+    footer .copyright>.about-ads-wrapper {
+        width: 100%;
+    }
+}

@@ -1,0 +1,241 @@
+#about {
+    background-color: hsl(225, 15%, 5%);
+    text-align: center;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+#about h3,
+#about h1,
+#about .liveTV-description,
+#about .limited-time,
+#about a,
+#about .terms {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+#about>div:first-child {
+    padding-block: 5rem;
+    padding-inline: 2rem;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+#about>div:first-child h3 {
+    color: hsl(150, 81%, 51%);
+    font-family: graphikMed;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+}
+
+#about>div:first-child h1 {
+    font-family: graphikSemi;
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+#about>div:first-child .liveTV-description {
+    max-width: 900px;
+    margin: 23.8px auto;
+    font-family: graphikReg;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#about>div:first-child .limited-time {
+    font-family: graphikSemi;
+    font-size: 18px;
+    margin-top: 23.8px;
+    color: hsl(150, 81%, 51%);
+}
+
+#about>div:first-child a {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 1rem 1.4rem;
+    border-radius: 6px;
+    background-color: hsl(150, 81%, 51%);
+    color: #000;
+    font-family: graphikSemi;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#about>div:first-child a:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(28, 231, 131, 0.35);
+}
+
+#about .terms {
+    max-width: 1200px;
+    font-family: graphikReg;
+    font-size: 10px;
+    color: hsl(0, 0%, 60%);
+    padding-inline: 2rem;
+    margin: 0 auto 1.4rem;
+}
+
+#about>div:nth-child(2) {
+    padding-bottom: 5rem;
+}
+
+#about .terms+a {
+    position: relative;
+    text-transform: uppercase;
+    font-family: graphikSemi;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+}
+
+#about .terms+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transition: width 0.25s ease;
+}
+
+#about .terms+a:hover::after {
+    width: 100%;
+}
+
+#about.in-view h3,
+#about.in-view h1,
+#about.in-view .liveTV-description,
+#about.in-view .limited-time,
+#about.in-view a,
+#about.in-view .terms {
+    animation: huluFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+#about.in-view h3 {
+    animation-delay: 0.15s;
+}
+
+#about.in-view h1 {
+    animation-delay: 0.25s;
+}
+
+#about.in-view .liveTV-description {
+    animation-delay: 0.4s;
+}
+
+#about.in-view .limited-time {
+    animation-delay: 0.55s;
+}
+
+#about.in-view a {
+    animation-delay: 0.7s;
+}
+
+#about.in-view .terms {
+    animation-delay: 0.85s;
+}
+
+@keyframes huluFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bgSlowZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+@media (max-width: 600px) {
+
+    #about>div:first-child {
+        padding-top: 3.5rem;
+    }
+
+    #about>div:first-child h3 {
+        font-size: 12px;
+    }
+
+    #about>div:first-child h1 {
+        font-size: 28px;
+    }
+
+    #about>div:first-child .liveTV-description {
+        font-size: 14px;
+    }
+
+    #about>div:first-child .limited-time {
+        font-size: 15px;
+    }
+
+    #about>div:first-child a {
+        font-size: 13px;
+        padding: 0.8rem 1.2rem;
+    }
+
+    #about .terms {
+        font-size: 9px;
+        padding-inline: 1.5rem;
+    }
+
+    #about .terms+a {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    #about>div:first-child {
+        padding-top: 4.5rem;
+    }
+
+    #about>div:first-child h1 {
+        font-size: 36px;
+    }
+
+    #about>div:first-child .liveTV-description {
+        font-size: 16px;
+    }
+
+    #about .terms {
+        padding-inline: 4rem;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+
+    #about>div:first-child {
+        padding-inline: 6rem;
+    }
+
+    #about .terms {
+        padding-inline: 6rem;
+    }
+
+}
+
+@media (min-width: 1400px) {
+
+    #about>div:first-child {
+        padding-inline: 12rem;
+    }
+
+    #about .terms {
+        padding-inline: 12rem;
+    }
+    
+}

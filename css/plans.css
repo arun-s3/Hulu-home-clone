@@ -1,0 +1,306 @@
+#plan-container {
+    background-color: #0B0C0F;
+    height: auto;
+    padding: 17%;
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+#plan-container>div:first-child {
+    text-align: center;
+    border-bottom: 1px solid #9999;
+    padding-bottom: 2.2rem;
+}
+
+#plan-container>div:first-child h1 {
+    font-family: graphikSemi;
+    font-size: clamp(28px, 4vw, 48px);
+    letter-spacing: 0.2px;
+}
+
+#plan-container .div1>h4 {
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+#plan-container .div1>.hidden-fee {
+    font-family: graphikReg;
+    font-size: 18px;
+    margin-top: 23.8px;
+    font-weight: lighter;
+    word-spacing: 1px;
+    letter-spacing: 0.2px;
+}
+
+#plan-container .div1>.cancel-anytime {
+    margin-top: 3px;
+    font-family: graphikReg;
+    font-size: 18px;
+}
+
+#plan-container .div2 {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-block: 2.2rem;
+    border-bottom: 1px solid #9999;
+}
+
+#plan-container .div2>.plan-switch {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.plan-switch .base-plans {
+    margin-left: 12px;
+    font-family: graphikMed;
+    font-size: 14px;
+    color: #fff;
+}
+
+.plan-switch .bundle {
+    font-size: 14px;
+}
+
+.plan-switch .plan-switch-img-wrapper1 {
+    width: 100px;
+    height: auto;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.plan-switch .plan-switch-img-wrapper1>img {
+    width: 35%;
+}
+
+.plan-switch .plan-switch-img-wrapper2 {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+.plan-switch .plan-switch-img-wrapper2>img {
+    width: 100%;
+}
+
+.plan-switch .plan-switch-img-wrapper3 {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.plan-switch .plan-switch-img-wrapper3>img {
+    width: 100%;
+}
+
+#plan-container .div2>.hulu-cta-buttons {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.hulu-cta-buttons .cta-bundle1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hulu-cta-buttons .cta-bundle2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hulu-cta-buttons .price {
+    font-family: graphikSemi;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    color: #040405;
+    background-color: #fff;
+    padding: 0.9rem 2.5rem;
+    white-space: nowrap;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.hulu-cta-buttons .cta-bundle1>a:first-child {
+    font-family: graphikMed;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #16181D;
+    background-color: hsl(150, 81%, 51%);
+    padding: 10px 15px;
+    width: 140px;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.hulu-cta-buttons .cta-bundle2>a:first-child {
+    visibility: hidden;
+    font-family: graphikMed;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #16181D;
+    background-color: hsl(150, 81%, 51%);
+    padding: 10px 15px;
+    width: 140px;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.price-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2.5rem;
+}
+
+.price-table>div {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 1px solid #9999;
+    padding-block: 1.8rem;
+    font-family: graphikReg;
+    font-size: 14px;
+}
+
+.price-table div>p[class="checked"] {
+    font-size: 20px;
+    color: hsl(150, 81%, 51%);
+    font-weight: 900;
+}
+
+.price-table div>p:last-child {
+    justify-self: center;
+}
+
+#plan-container .show-add-ons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-block: 1rem;
+    border-bottom: 1px solid #9999;
+}
+
+#plan-container .show-add-ons .down-arrow-wrapper {
+    width: 75px;
+    cursor: pointer;
+}
+
+#plan-container .show-add-ons .down-arrow-wrapper>img {
+    width: 38%;
+}
+
+.price-table .conditions>p {
+    font-family: graphikReg;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    align-self: start;
+    padding-top: 0px;
+    padding-bottom: 3.8rem;
+    padding-left: 15px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    #plan-container {
+        padding: 3rem 1.25rem;
+    }
+
+    #plan-container .div2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .plan-switch {
+        align-items: center;
+    }
+
+    .hulu-cta-buttons {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hulu-cta-buttons .price {
+        width: 100%;
+    }
+
+    .price-table>div {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding-block: 1.2rem;
+    }
+
+    .price-table>div span {
+        font-weight: 600;
+    }
+
+    .price-table>div p {
+        justify-self: start;
+    }
+
+    .price-table div>p[class="checked"] {
+        font-size: 18px;
+    }
+
+    .price-table .conditions>p {
+        font-size: 9px;
+        padding-left: 0;
+    }
+
+    #plan-container .show-add-ons {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    #plan-container {
+        padding-inline: 3rem;
+    }
+
+    #plan-container .div2 {
+        gap: 2.5rem;
+    }
+
+    .hulu-cta-buttons .price {
+        padding: 0.9rem 3.5rem;
+    }
+
+    .price-table>div {
+        grid-template-columns: 2fr 1fr 1fr;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+
+    #plan-container {
+        padding-inline: 5rem;
+    }
+
+    .hulu-cta-buttons .price {
+        padding: 0.9rem 4rem;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    #plan-container {
+        padding-inline: 10rem;
+    }
+
+    .price-table>div {
+        font-size: 15px;
+    }
+}

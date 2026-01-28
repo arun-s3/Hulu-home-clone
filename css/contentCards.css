@@ -1,0 +1,212 @@
+#cards-wrapper {
+    background-color: hsl(225, 15%, 5%);
+    color: #fff;
+    padding-bottom: 4.5rem;
+    overflow: hidden;
+}
+
+#cards-wrapper>div:first-child {
+    text-align: center;
+    padding-inline: 1.5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+#cards-wrapper.reveal>div:first-child {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#cards-wrapper>div:first-child h4 {
+    color: hsl(150, 81%, 51%);
+    font-family: graphikMed;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    word-spacing: 0.6px;
+    font-weight: lighter;
+    margin-bottom: 1.35rem;
+}
+
+#cards-wrapper>div:first-child h1 {
+    font-size: 48px;
+    font-weight: 900;
+    font-family: graphikSemi;
+    margin-bottom: 23.8px;
+}
+
+#cards-wrapper>div:first-child h3 {
+    font-family: graphikReg;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+#cards-wrapper h3 br {
+    display: none;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-inline: 6rem;
+    height: auto;
+}
+
+.cards .individual-card {
+    border-radius: 9px;
+    position: relative;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.cards .individual-card.reveal {
+    animation: cardFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.cards .individual-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.cards .individual-card:hover img {
+    transform: scale(1.08);
+}
+
+.cards .individual-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    height: 100%;
+    width: 100%;
+    transition: background-image 0.4s ease;
+}
+
+.cards .individual-card:hover::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+}
+
+.cards-img-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 9px;
+}
+
+.cards-img-wrapper img {
+    width: 100%;
+    border-radius: 9px;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cards .cards-header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.cards .cards-header>h3 {
+    font-family: graphikMed;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.cards .cards-header>h2 {
+    font-family: graphikSemi;
+    font-size: 24px;
+    margin-top: 0.5rem;
+}
+
+@keyframes cardFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    #cards-wrapper>div:first-child {
+        padding-top: 3.5rem;
+        padding-bottom: 3rem;
+    }
+
+    #cards-wrapper>div:first-child h4 {
+        font-size: 12px;
+    }
+
+    #cards-wrapper>div:first-child h1 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    #cards-wrapper>div:first-child h3 {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        padding-inline: 1.25rem;
+    }
+
+    .cards .cards-header {
+        top: 14px;
+        left: 14px;
+    }
+
+    .cards .cards-header h3 {
+        font-size: 13px;
+    }
+
+    .cards .cards-header h2 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    #cards-wrapper>div:first-child h1 {
+        font-size: 36px;
+    }
+
+    #cards-wrapper>div:first-child h3 {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        padding-inline: 3rem;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+        padding-inline: 4rem;
+    }
+
+    #cards-wrapper>div:first-child h1 {
+        font-size: 42px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .cards {
+        padding-inline: 8rem;
+    }
+
+    #cards-wrapper>div:first-child h1 {
+        font-size: 52px;
+    }
+}

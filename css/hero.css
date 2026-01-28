@@ -1,0 +1,218 @@
+#frontSection {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../Images/hulu_movies1.jpg");
+    width: 100%;
+    background-size: cover;
+    background-position: -77px 0;
+    min-height: 100vh;
+    height: auto;
+    background-position: center;
+}
+
+#cta-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 2.5rem 1rem 3rem;
+    height: auto;
+    width: 100%;
+    position: static;
+    top: 60vh;
+    left: 50%;
+    opacity: 0;
+    transform: translateY(var(--fade-distance));
+    animation: sectionReveal 1s var(--ease-out) forwards;
+    animation-delay: 0.35s;
+}
+
+#cta-options .cta-bundle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+
+.cta-bundle>div {
+    display: flex;
+    flex-direction: column;
+    gap: 29.8px;
+    width: 100%;
+    max-width: 340px;
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.cta-bundle>div h5 {
+    font-family: graphikSemi;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    word-spacing: 0.6px;
+    color: hsl(150, 81%, 51%);
+    text-align: center;
+}
+
+.cta-bundle>div h2 {
+    font-family: graphikMed;
+    font-size: 20px;
+    text-align: center;
+}
+
+.cta-bundle>div a {
+    font-family: graphikSemi;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    word-spacing: 1.5px;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: hsl(150, 81%, 51%);
+    border-radius: 7px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), background-color 0.25s;
+}
+
+.cta-bundle>div a:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(28, 231, 131, 0.35);
+}
+
+.cta-bundle .img-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.cta-bundle .img-wrapper img {
+    width: 50%;
+    height: auto;
+    text-align: center;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.cta-bundle>div:hover .img-wrapper img {
+    transform: translateY(-6px);
+}
+
+.cta-bundle>div:last-child p {
+    font-family: graphikReg;
+    font-size: 10px;
+    margin-top: -23px;
+    text-align: center;
+}
+
+.cta-bundle>div.reveal {
+    animation: cardReveal 0.9s var(--ease-out) forwards;
+}
+
+#cta-options .terms {
+    position: relative;
+    font-family: graphikReg;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20.4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cta-options .sign-up {
+    position: relative;
+    font-family: graphikReg;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 23.4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cta-options .terms::after,
+#cta-options .sign-up::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transition: width 0.25s ease;
+}
+
+#cta-options .terms:hover::after,
+#cta-options .sign-up:hover::after {
+    width: 100%;
+}
+
+@keyframes sectionReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cta-bundle {
+        flex-direction: column;
+    }
+
+    .cta-bundle>div h5 {
+        font-size: 11px;
+    }
+
+    .cta-bundle>div h2 {
+        font-size: 18px;
+    }
+
+    .cta-bundle>div a {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+
+    .cta-bundle>div:last-child p {
+        font-size: 9px;
+    }
+
+    #cta-options .terms {
+        font-size: 13px;
+    }
+
+    #cta-options .sign-up {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    #cta-options {
+        padding-top: 3.5rem;
+    }
+
+    .cta-bundle>div {
+        width: 18rem;
+    }
+
+    .cta-bundle>div h2 {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .cta-bundle {
+        gap: 48px;
+    }
+
+    .cta-bundle>div {
+        width: 22rem;
+    }
+
+    .cta-bundle>div h2 {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,58 @@
+#promotion {
+    width: 100%;
+    background-color: hsl(150, 81%, 51%);
+    /* #1CE783 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    height: auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-16px);
+    animation: promoReveal 0.8s var(--ease-out) forwards;
+}
+
+#promotion h4 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.32;
+    word-spacing: 1px;
+}
+
+#promotion span {
+    font-weight: 900;
+    font-family: graphikBold;
+    word-spacing: 0;
+    border-bottom: 1px solid hsl(0, 0%, 45%);
+    cursor: pointer;
+}
+
+#promotion p {
+    font-size: 10px;
+    color: hsl(0, 0%, 25%);
+    margin-top: 4.5px;
+    letter-spacing: 0.4px;
+}
+
+@keyframes promoReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    #promotion h4 {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    #promotion span {
+        display: block;
+        margin-top: 4px;
+    }
+
+}
