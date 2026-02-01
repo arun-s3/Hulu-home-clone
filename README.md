@@ -1,4 +1,4 @@
-# 🎬 Hulu Homepage Clone
+# 🎬 Hulu Home Clone
 
 A pixel-faithful, fully responsive clone of the Hulu landing page built using  **vanilla HTML, CSS, and JavaScript** .
 This project focuses on  **layout precision, animation timing, responsiveness, and clean separation of concerns** —replicating the real Hulu homepage behavior as closely as possible.
@@ -15,18 +15,6 @@ This project focuses on  **layout precision, animation timing, responsiveness, a
 
 ---
 
-## 🧠 What This Project Demonstrates
-
-This project emphasizes  **frontend fundamentals over frameworks** :
-
-* Strong grasp of **CSS layout systems** (Flexbox, positioning, responsive units)
-* Animation orchestration using **CSS transitions + JS timing**
-* Efficient scroll-based animations using **Intersection Observer**
-* Maintainable styling via **modular CSS files per section**
-* Attention to **visual accuracy and UX polish**
-
----
-
 ## 🔗 Live Demo
 
 👉 [robogeniz.netlify.app](https://robogeniz.netlify.app)
@@ -39,8 +27,6 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ### 🎬 Navigation & Hero Section
 
-**Details:**
-
 * Faithful recreation of Hulu’s hero layout with strong visual hierarchy
 * Fully responsive header and CTA-focused introduction
 
@@ -50,8 +36,6 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ### 🧩 Content Cards Section
 
-**Details:**
-
 * Created modular content cards and added staggered reveal animations using vanilla JavaScript
 
 ![Content Cards](./screenshots/content-cards.png)
@@ -59,8 +43,6 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 ---
 
 ### 🏟️ Live Sports Section
-
-**Details:**
 
 * Brand-consistent section with scroll-triggered reveal animations with responsive layout
 
@@ -70,8 +52,6 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ### 📖 About Section
 
-**Details:**
-
 * Clean informational layout with balanced spacing and typography
 * Subtle animation for guided user attention
 
@@ -80,8 +60,6 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 ---
 
 ### 💳 Plans & Pricing
-
-**Details:**
 
 * Structured pricing layout for easy comparison
 * Responsive design maintaining alignment and readability
@@ -93,12 +71,22 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ### 🦶 Footer & Page Closure
 
-**Details:**
-
 * Multi-column footer with clear link hierarchy
 * Consistent branding and visual closure
 
 ![Footer](./screenshots/footer.png)
+
+---
+
+## 🧠 What This Project Demonstrates
+
+This project emphasizes  **frontend fundamentals over frameworks** :
+
+* Strong grasp of **CSS layout systems** (Flexbox, positioning, responsive units)
+* Animation orchestration using **CSS transitions + JS timing**
+* Efficient scroll-based animations using **Intersection Observer**
+* Maintainable styling via **modular CSS files per section**
+* Attention to **visual accuracy and UX polish**
 
 ---
 
