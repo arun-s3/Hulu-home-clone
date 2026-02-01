@@ -1,7 +1,4 @@
-<h1>
-    <img src="./Images/favicon.png" alt="Brand logo" width="36" style="vertical-align: middle;" />
-    Hulu Home Clone
-</h1>
+# 📺 Hulu Home Clone
 
 A pixel-faithful, fully responsive clone of the Hulu landing page built using  **vanilla HTML, CSS, and JavaScript** .
 This project focuses on  **layout precision, animation timing, responsiveness, and clean separation of concerns** —replicating the real Hulu homepage behavior as closely as possible.
