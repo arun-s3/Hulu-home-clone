@@ -1,4 +1,7 @@
-# 🎬 Hulu Home Clone
+<h1>
+    <img src="./Images/favicon.png" alt="Brand logo" width="36" style="vertical-align: middle;" />
+    Hulu Home Clone
+</h1>
 
 A pixel-faithful, fully responsive clone of the Hulu landing page built using  **vanilla HTML, CSS, and JavaScript** .
 This project focuses on  **layout precision, animation timing, responsiveness, and clean separation of concerns** —replicating the real Hulu homepage behavior as closely as possible.
@@ -32,7 +35,7 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ![Hero](./screenshots/banner-header-hero.png)
 
----
+..................................................................................................
 
 ### 🧩 Content Cards Section
 
@@ -40,7 +43,8 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ![Content Cards](./screenshots/content-cards.png)
 
----
+..................................................................................................
+
 
 ### 🏟️ Live Sports Section
 
@@ -48,7 +52,8 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ![Live Sports](./screenshots/live-sports.png)
 
----
+..................................................................................................
+
 
 ### 📖 About Section
 
@@ -57,7 +62,8 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 
 ![About](./screenshots/about.png)
 
----
+..................................................................................................
+
 
 ### 💳 Plans & Pricing
 
@@ -67,9 +73,10 @@ A visual walkthrough of the Hulu homepage clone, highlighting layout accuracy, r
 ![Plans1](./screenshots/plans1.png)
 ![Plans2](./screenshots/plans2.png)
 
----
+..................................................................................................
 
-### 🦶 Footer & Page Closure
+
+### 📜Footer & Page Closure
 
 * Multi-column footer with clear link hierarchy
 * Consistent branding and visual closure
